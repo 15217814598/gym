@@ -26,6 +26,5 @@ export default {
         height: 100%;
         padding: 0px;
         margin: 0px;
-        background-image: url('./assets/gym.jpg');
     }
 </style>

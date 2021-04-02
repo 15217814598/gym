@@ -39,6 +39,27 @@ let cols = [
         label: '教练名称',
         id: 8
     },
+    {
+        prop: 'IdCard',
+        label: '身份证',
+        id: 8
+    },
+    {
+        prop: 'Birthday',
+        label: '出生日期',
+        id: 8
+    },
+    {
+        prop: 'age',
+        label: '年龄',
+        id: 8
+    },
+    {
+        prop: 'sex',
+        label: '性别',
+        id: 8
+    },
+
 ];
 let datas = {
     pageSize: 10,
@@ -53,7 +74,11 @@ let datas = {
             remainingTimes: '-',
             remainingDays: '-',
             overdue: '否',
-            coach: 'D'
+            coach: 'D',
+            IdCard:'123',
+            Birthday:'123',
+            sex:1,
+            age:1
         },
     ]
 };

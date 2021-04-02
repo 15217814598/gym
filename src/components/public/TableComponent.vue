@@ -1,8 +1,10 @@
 <template>
-    <el-card>
+    <el-card >
         <div slot="header">
             <el-row>
-                <el-button type="primary" icon="el-icon-circle-plus-outline" size="mini" class="div-left" @click="createNew()">
+                <el-button type="primary" icon="el-icon-circle-plus-outline" size="mini" class="div-left" @click="createNew(
+                    
+                )">
                     新增
                 </el-button>
                 <el-dropdown @command="exportOrImport" class="div-left">
@@ -24,11 +26,12 @@
             </el-row>
         </div>
         <div>
-            <el-table :data="tableData.data" size="small" stripe highlight-current-row>
+            <el-table :data="tableData.data" size="small" stripe highlight-current-row  class="table">
                 <el-table-column type="index" :index="index"></el-table-column>
                 <el-table-column align="center" v-for="(val, index) in colData" :prop="val.prop" :label="val.label" :key="index"></el-table-column>
-                <el-table-column fixed="right" label="操作">
-                    <el-button size="small">编辑</el-button>
+                <el-table-column  label="操作" width="165px" align="center" >
+                        <el-button type="primary" icon="el-icon-edit"  size="mini" @click="updateNew()"></el-button>
+                        <el-button type="danger" icon="el-icon-delete"  size="mini" @click="deleteNew()"></el-button>
                 </el-table-column>
             </el-table>
             <hr/>
@@ -53,7 +56,8 @@
             return {
                 search: '',
                 index: 1,
-                dropdownMenu: dropdownMenu
+                dropdownMenu: dropdownMenu,
+                add:'add'
             }
         },
         props: ['tableData', 'colData'],
@@ -70,6 +74,12 @@
             },
             createNew() {
                 this.$emit('create');
+            },
+            updateNew() {
+                this.$emit('update');
+            },
+            deleteNew() {
+                this.$emit('delete');
             }
         }
     }
@@ -80,12 +90,11 @@
         width: 200px;
         float: right;
     }
-    .card {
-        width: 100%;
-        height: 100%;
-    }
+    
     .div-left {
         float: left;
         margin-left: 5px;
     }
+    
+    
 </style>

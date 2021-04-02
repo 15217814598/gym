@@ -1,9 +1,9 @@
 <template>
-    <el-container>
-        <el-aside width="200px"><nav-menu class="nav-menu-style"></nav-menu></el-aside>
-        <el-container>
-            <el-header class="nav-header"><nav-header class="nav-header-item"></nav-header></el-header>
-            <el-main>
+    <el-container class="container">
+        <el-header class="nav-header"><nav-header class="nav-header-item"></nav-header></el-header>
+        <el-container >
+            <el-aside width="200px"><nav-menu class="nav-menu-style"></nav-menu></el-aside>
+            <el-main class="nav-main">
                 <router-view v-if="isRouterAlive"/>
             </el-main>
         </el-container>
@@ -37,17 +37,24 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="less">
     .nav-header {
-        background-color: #00ffff;
+        background: linear-gradient(to right, rgb(0, 0, 0) , rgba(253, 249, 249,0.5));
         display: table;
+        border: none;
+    }
+    .container{
+        margin: -1px 0 0 0;
+        background-size:100% 100%;
     }
     .nav-header-item {
         display: table-cell;
         vertical-align: middle;
+        border: none;
     }
     .nav-menu-style {
         height: 100%;
         text-align: left;
     }
+    
 </style>

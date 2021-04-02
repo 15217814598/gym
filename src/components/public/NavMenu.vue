@@ -1,10 +1,9 @@
 <template>
-    <el-row class="height-full">
-        <el-col :span="24" class="height-full">
+   <div>
             <el-menu class="height-full"
-                     background-color="#000"
-                     text-color="#fff"
-                     active-text-color="cyan"
+                     background-color="rgba(253, 249, 249,0.5)"
+                     text-color="rgba(53, 48, 48, 0.5)"
+                     active-text-color="rgb(111, 173, 189)"
                      :default-active="this.$route.path"
                      router>
                 <div>
@@ -29,8 +28,7 @@
                     <el-menu-item :index="second.path" v-for="(second, index1) in one.items" :key="index1" @click="test(second)">{{ second.title }}</el-menu-item>
                 </el-submenu>
             </el-menu>
-        </el-col>
-    </el-row>
+            </div>
 </template>
 
 <script>
@@ -46,11 +44,12 @@ export default {
     },
     methods: {
         test (second) {
-            console.log(second)
+           
         }
     },
     created () {
         this.menuMap = menus
+        console.log(this.menuMap)
     }
 }
 </script>
@@ -62,9 +61,12 @@ export default {
 .head {
     padding: 50px 50px 10px 50px;
 }
+.el-menu{
+    border: none;
+}
 .user-style {
     padding-bottom: 25px;
-    color: white;
+    color: rgb(111, 173, 189);
     text-align: center;
 }
 </style>
